@@ -119,9 +119,7 @@ SubShader {
 			TRANSFER_SHADOW_CASTER(o)
 			o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
 			o.uv2 = TRANSFORM_TEX(v.texcoord, _OutlineTex);
-			o.alphaClip = o.alphaClip = (1.0 - _OutlineWidth * _ScaleRatioA - _FaceDilate * _ScaleRatioA) / 2;
-			return o;
-		}
+o.alphaClip = (1.0 - _OutlineWidth * _ScaleRatioA - _FaceDilate * _ScaleRatioA) / 2;		}
 
 		uniform sampler2D _MainTex;
 
