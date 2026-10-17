@@ -13,7 +13,7 @@ float4 BlendARGB(float4 overlying, float4 underlying)
 	underlying.rgb *= underlying.a;
 	float3 blended = overlying.rgb + ((1 - overlying.a) * underlying.rgb);
 	float alpha = underlying.a + (1 - underlying.a) * overlying.a;
-    return float4(blended / max(alpha,0.0001), alpha);
+	return float4(blended / alpha, alpha);
 }
 
 float3 GetSpecular(float3 n, float3 l)
