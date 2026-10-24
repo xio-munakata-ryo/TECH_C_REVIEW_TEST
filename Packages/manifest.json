@@ -6,6 +6,7 @@
     "com.dbrizov.naughtyattributes": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
     "com.h8man.2d.navmeshplus": "https://github.com/h8man/NavMeshPlus.git#master",
     "com.neuecc.unirx": "https://github.com/neuecc/UniRx.git?path=Assets/Plugins/UniRx/Scripts",
+    "com.unity.2d.sprite": "1.0.0",
     "com.unity.ai.navigation": "2.0.16",
     "com.unity.collab-proxy": "2.11.4",
     "com.unity.ide.rider": "3.0.40",
