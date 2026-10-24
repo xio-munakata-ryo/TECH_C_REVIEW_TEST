@@ -1,5 +1,6 @@
 {
   "dependencies": {
+<<<<<<< HEAD
     "com.unity.2d.animation": {
       "version": "13.0.4",
       "depth": 0,
@@ -96,12 +97,70 @@
       "dependencies": {
         "com.unity.2d.common": "12.0.2",
         "com.unity.modules.uielements": "1.0.0"
+=======
+    "com.annulusgames.lit-motion": {
+      "version": "https://github.com/annulusgames/LitMotion.git?path=src/LitMotion/Assets/LitMotion",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.burst": "1.6.0",
+        "com.unity.collections": "1.5.1",
+        "com.unity.mathematics": "1.0.1"
+      },
+      "hash": "422eb124051c81a9bc3f422ebf190703c5053514"
+    },
+    "com.coffee.unmask": {
+      "version": "https://github.com/mob-sakai/UnmaskForUGUI.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "33356da2c43fa28397192baee70910c978e3169f"
+    },
+    "com.cysharp.unitask": {
+      "version": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "a77a1b4a89824fb6df293099de3060daf2a432c1"
+    },
+    "com.dbrizov.naughtyattributes": {
+      "version": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "b11d62b28c5fcbe242988f9f8d451deb925cf23b"
+    },
+    "com.h8man.2d.navmeshplus": {
+      "version": "https://github.com/h8man/NavMeshPlus.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "16283ee1040e591b9a99ddf93f37e9af93925aaf"
+    },
+    "com.neuecc.unirx": {
+      "version": "https://github.com/neuecc/UniRx.git?path=Assets/Plugins/UniRx/Scripts",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "6baeccf6c544c155497164327cca72f28163a578"
+    },
+    "com.unity.ai.navigation": {
+      "version": "2.0.16",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.ai": "1.0.0"
+>>>>>>> origin/develop
       },
       "url": "https://packages.unity.com"
     },
     "com.unity.burst": {
       "version": "1.8.27",
+<<<<<<< HEAD
       "depth": 2,
+=======
+      "depth": 1,
+>>>>>>> origin/develop
       "source": "registry",
       "dependencies": {
         "com.unity.mathematics": "1.2.1",
@@ -110,7 +169,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.collab-proxy": {
+<<<<<<< HEAD
       "version": "2.11.3",
+=======
+      "version": "2.11.4",
+>>>>>>> origin/develop
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -136,7 +199,11 @@
       "dependencies": {}
     },
     "com.unity.ide.rider": {
+<<<<<<< HEAD
       "version": "3.0.39",
+=======
+      "version": "3.0.40",
+>>>>>>> origin/develop
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -145,7 +212,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
+<<<<<<< HEAD
       "version": "2.0.26",
+=======
+      "version": "2.0.28",
+>>>>>>> origin/develop
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -253,7 +324,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
+<<<<<<< HEAD
       "version": "1.8.10",
+=======
+      "version": "1.8.13",
+>>>>>>> origin/develop
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -273,6 +348,7 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+<<<<<<< HEAD
     "com.unity.visualscripting": {
       "version": "1.9.9",
       "depth": 0,
@@ -282,6 +358,14 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.com"
+=======
+    "jp.hadashikick.vcontainer": {
+      "version": "https://github.com/hadashiA/VContainer.git?path=VContainer/Assets/VContainer#1.19.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "5401e5a7ebc4980a2b82141ffc26391a6547edd7"
+>>>>>>> origin/develop
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
