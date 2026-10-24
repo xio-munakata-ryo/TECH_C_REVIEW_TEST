@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132488fb6f5376b4283d818afcd976b4, type: 3}
+  m_Name: GameSettings
+  m_EditorClassIdentifier: TowerDefense.Runtime::TowerDefense.DefenseSettings
+  _startingCredits: 180
+  _baseHealth: 12
+  _towers:
+  - {fileID: 11400000, guid: f7be4d70b04b3e54fa3862365b428133, type: 2}
+  - {fileID: 11400000, guid: 0898dc9433e8113478a8a06a80724448, type: 2}
+  _enemyPrefab: {fileID: 5519686739346709338, guid: 963d52eb878e9ea4c8c4b7b34c92a14b, type: 3}
+  _tilePrefab: {fileID: 762974370904648351, guid: 4aa29c0baf2eb6e49a6007befdaf3524, type: 3}
+  _basePrefab: {fileID: 8914872472611475781, guid: 49d90cb4734030043bb14ddb17029749, type: 3}
+  _groundMaterial: {fileID: 2100000, guid: 0766fa63e73bd254da6a4ef821e22fed, type: 2}
+  _pathMaterial: {fileID: 2100000, guid: bf8bb508c796db847aab56a8d3eb5d6e, type: 2}
+  _padMaterial: {fileID: 2100000, guid: e9eb868faa9039946b878e55e33699f9, type: 2}
+  _shotMaterial: {fileID: 2100000, guid: db43ca1a8ceabe84da7fa3a661e02e65, type: 2}
+  _waves:
+  - Count: 8
+    Health: 35
+    Speed: 1.5
+    SpawnInterval: 1
+    Reward: 12
+    ClearBonus: 35
+  - Count: 11
+    Health: 60
+    Speed: 1.65
+    SpawnInterval: 0.9
+    Reward: 14
+    ClearBonus: 45
+  - Count: 14
+    Health: 85
+    Speed: 1.8
+    SpawnInterval: 0.8
+    Reward: 16
+    ClearBonus: 55
+  - Count: 17
+    Health: 110
+    Speed: 1.95
+    SpawnInterval: 0.7
+    Reward: 18
+    ClearBonus: 65
+  - Count: 20
+    Health: 135
+    Speed: 2.1
+    SpawnInterval: 0.6
+    Reward: 20
+    ClearBonus: 75

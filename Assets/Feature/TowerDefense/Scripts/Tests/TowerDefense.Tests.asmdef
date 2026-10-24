@@ -1,0 +1,6 @@
+{
+    "name": "TowerDefense.Tests",
+    "rootNamespace": "TowerDefense.Tests",
+    "references": ["TowerDefense.Runtime"],
+    "optionalUnityReferences": ["TestAssemblies"]
+}
