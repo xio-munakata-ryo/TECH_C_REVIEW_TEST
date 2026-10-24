@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101713">
+  <meta name="description" content="自然の力を操り、最後の森を守り抜くタワーディフェンスゲーム「LAST GROVE」の企画紹介。">
+  <title>LAST GROVE — ゲーム企画</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #101713;
+      --surface: #18221c;
+      --surface-light: #202d24;
+      --text: #f0f0df;
+      --muted: #a6b1a3;
+      --green: #b6e58b;
+      --green-dark: #6b9f54;
+      --orange: #f1a667;
+      --line: rgba(232, 240, 219, .14);
+      --serif: Georgia, "Yu Mincho", "Hiragino Mincho ProN", serif;
+      font-family: "Yu Gothic UI", "Meiryo", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.7; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .wrap { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+
+    .topbar {
+      position: absolute; z-index: 5; inset: 0 0 auto; height: 78px;
+      display: flex; align-items: center; border-bottom: 1px solid var(--line);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 11px; font: 700 15px var(--serif); letter-spacing: .16em; }
+    .brand-mark {
+      display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid var(--green);
+      border-radius: 50%; color: var(--green); font: 18px var(--serif);
+    }
+    .nav-links { display: flex; gap: 30px; align-items: center; color: #d0d5c9; font-size: 12px; letter-spacing: .08em; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-cta { padding: 9px 16px; border: 1px solid rgba(182,229,139,.6); color: var(--green); }
+
+    .hero {
+      min-height: 710px; display: flex; align-items: center; position: relative; overflow: hidden;
+      background:
+        radial-gradient(ellipse at 74% 45%, rgba(113, 149, 81, .28), transparent 33%),
+        linear-gradient(90deg, rgba(16,23,19,.98) 0%, rgba(16,23,19,.82) 46%, rgba(16,23,19,.32) 100%),
+        linear-gradient(160deg, #263c2d 0%, #111a15 64%, #111713 100%);
+    }
+    .hero::before, .hero::after {
+      content: ""; position: absolute; pointer-events: none; border: 1px solid rgba(182,229,139,.13);
+      border-radius: 50%; transform: rotate(-24deg);
+    }
+    .hero::before { width: 660px; height: 390px; right: -22px; top: 175px; }
+    .hero::after { width: 560px; height: 310px; right: 42px; top: 218px; }
+    .hero-art {
+      position: absolute; right: 8%; top: 150px; width: min(41vw, 500px); aspect-ratio: 1;
+      display: grid; place-items: center; opacity: .82;
+    }
+    .moon { position: absolute; width: 58%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 35% 32%, #d8e8b2, #91b678 55%, #526b48); box-shadow: 0 0 90px rgba(182,229,139,.23); }
+    .tree {
+      position: absolute; width: 0; height: 0; border-left: 86px solid transparent; border-right: 86px solid transparent;
+      border-bottom: 220px solid #192c20; filter: drop-shadow(0 0 18px rgba(8,17,11,.5));
+    }
+    .tree::before { content: ""; position: absolute; left: -58px; top: 64px; border-left: 58px solid transparent; border-right: 58px solid transparent; border-bottom: 154px solid #253e2a; }
+    .tree::after { content: ""; position: absolute; left: -8px; top: 185px; width: 16px; height: 75px; background: #7b6240; }
+    .tree-a { transform: translate(-65px, 72px) scale(.72); opacity: .75; }
+    .tree-b { transform: translate(68px, 42px) scale(1.15); }
+    .hero-copy { position: relative; z-index: 2; padding-top: 76px; max-width: 620px; }
+    .eyebrow { color: var(--green); text-transform: uppercase; letter-spacing: .24em; font-size: 11px; font-weight: 700; }
+    h1 { margin: 20px 0 12px; font: 500 clamp(56px, 9vw, 106px)/.98 var(--serif); letter-spacing: .015em; }
+    h1 span { display: block; color: var(--green); font-size: .55em; letter-spacing: .26em; margin-top: 17px; }
+    .hero-lead { max-width: 450px; margin: 28px 0 32px; color: #c5cec1; font-size: 15px; }
+    .button {
+      display: inline-flex; gap: 24px; align-items: center; padding: 13px 19px;
+      background: var(--green); color: #152017; font-size: 12px; font-weight: 700; letter-spacing: .08em;
+      transition: transform .2s, background .2s;
+    }
+    .button:hover { transform: translateY(-2px); background: #c8f19f; }
+    .button span { font-size: 18px; line-height: 1; }
+    .hero-note { margin-top: 58px; color: #8d9b8e; font-size: 10px; letter-spacing: .16em; }
+    .hero-note b { color: var(--orange); font-weight: 500; }
+
+    section { padding: 100px 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 44px; }
+    .section-label { color: var(--green); letter-spacing: .2em; font-size: 10px; font-weight: 700; }
+    h2 { margin: 8px 0 0; font: 500 clamp(30px, 5vw, 45px)/1.25 var(--serif); letter-spacing: .04em; }
+    .section-intro { max-width: 410px; color: var(--muted); font-size: 13px; margin: 0; }
+    .concept { background: #151e18; }
+    .concept-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+    .concept-visual {
+      min-height: 350px; position: relative; overflow: hidden; display: grid; place-items: center;
+      background: radial-gradient(ellipse at 50% 65%, rgba(160,196,117,.3), transparent 48%), linear-gradient(145deg,#24372a,#111914);
+      border: 1px solid var(--line);
+    }
+    .concept-visual::before { content: ""; position: absolute; width: 240px; height: 240px; border: 1px solid rgba(182,229,139,.24); border-radius: 50%; box-shadow: 0 0 0 32px rgba(182,229,139,.035), 0 0 0 65px rgba(182,229,139,.025); }
+    .seed { z-index: 1; font: 90px var(--serif); color: var(--green); text-shadow: 0 0 42px rgba(182,229,139,.45); }
+    .visual-caption { position: absolute; left: 22px; bottom: 18px; color: #a9b7a7; font-size: 10px; letter-spacing: .15em; }
+    .concept-copy h3 { font: 500 25px/1.6 var(--serif); margin: 0 0 18px; }
+    .concept-copy p { color: var(--muted); font-size: 13px; margin: 0 0 15px; }
+    .concept-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 30px; padding-top: 22px; border-top: 1px solid var(--line); }
+    .stat strong { display: block; font: 24px var(--serif); color: var(--green); }
+    .stat span { font-size: 10px; color: var(--muted); letter-spacing: .06em; }
+
+    .loop { background: var(--bg); }
+    .loop-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); }
+    .loop-card { min-height: 200px; padding: 24px 21px; border-right: 1px solid var(--line); position: relative; }
+    .loop-card:last-child { border: 0; }
+    .loop-num { color: var(--green); font: 12px var(--serif); letter-spacing: .14em; }
+    .loop-icon { display: block; font-size: 26px; margin: 19px 0 12px; color: var(--orange); }
+    .loop-card h3 { font: 500 18px var(--serif); margin: 0 0 7px; }
+    .loop-card p { margin: 0; color: var(--muted); font-size: 11px; }
+
+    .arsenal { background: #151e18; }
+    .unit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .unit-card { padding: 25px; border: 1px solid var(--line); background: rgba(255,255,255,.015); transition: border-color .2s, transform .2s; }
+    .unit-card:hover { border-color: rgba(182,229,139,.55); transform: translateY(-3px); }
+    .unit-symbol { width: 48px; height: 48px; display: grid; place-items: center; color: var(--green); border: 1px solid rgba(182,229,139,.36); border-radius: 50%; font-size: 20px; }
+    .unit-type { margin-top: 20px; color: var(--orange); font-size: 9px; letter-spacing: .18em; }
+    .unit-card h3 { margin: 5px 0 8px; font: 500 22px var(--serif); }
+    .unit-card p { color: var(--muted); font-size: 12px; margin: 0; }
+    .unit-tag { display: inline-block; margin-top: 18px; padding: 4px 9px; background: #26362a; color: #c1d5b8; font-size: 9px; }
+
+    .world { padding: 0; }
+    .world-panel {
+      padding: 83px 9%; position: relative; overflow: hidden;
+      background: linear-gradient(90deg, rgba(16,23,19,.97), rgba(16,23,19,.74)), radial-gradient(ellipse at 80% 50%, #597243, #1c3023 55%, #111713);
+    }
+    .world-panel::after { content: "✳"; position: absolute; right: 8%; top: 4%; font-size: 230px; color: rgba(182,229,139,.08); }
+    .world-content { position: relative; z-index: 1; max-width: 660px; }
+    .world-content p { max-width: 570px; color: #bac5b8; font-size: 13px; }
+    .world-quote { margin: 30px 0 0; padding-left: 18px; border-left: 2px solid var(--green); color: var(--green); font: italic 17px var(--serif); }
+
+    .roadmap { background: var(--bg); }
+    .roadmap-list { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+    .roadmap-item { padding: 22px 24px 10px 0; margin-right: 24px; border-right: 1px solid var(--line); }
+    .roadmap-item:last-child { border: 0; margin: 0; }
+    .phase { color: var(--orange); font-size: 10px; letter-spacing: .15em; }
+    .roadmap-item h3 { font: 500 20px var(--serif); margin: 11px 0 8px; }
+    .roadmap-item p { color: var(--muted); font-size: 11px; margin: 0; }
+    footer { border-top: 1px solid var(--line); padding: 24px 0; color: #879487; font-size: 10px; letter-spacing: .1em; }
+    .footer-row { display: flex; justify-content: space-between; gap: 15px; }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 36px, 560px); }
+      .topbar { height: 64px; }
+      .nav-links { gap: 13px; font-size: 10px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .nav-cta { padding: 7px 10px; }
+      .hero { min-height: 680px; align-items: end; padding-bottom: 48px; }
+      .hero-art { top: 100px; right: -4%; width: 78vw; opacity: .46; }
+      .hero-copy { padding-top: 120px; }
+      .hero-note { margin-top: 38px; }
+      section { padding: 72px 0; }
+      .section-head { display: block; }
+      .section-intro { margin-top: 16px; }
+      .concept-grid { grid-template-columns: 1fr; gap: 35px; }
+      .concept-visual { min-height: 270px; }
+      .loop-grid { grid-template-columns: 1fr 1fr; }
+      .loop-card { min-height: 180px; border-bottom: 1px solid var(--line); }
+      .loop-card:nth-child(2) { border-right: 0; }
+      .loop-card:nth-child(3), .loop-card:nth-child(4) { border-bottom: 0; }
+      .unit-grid { grid-template-columns: 1fr; }
+      .unit-card { display: grid; grid-template-columns: 58px 1fr; column-gap: 13px; }
+      .unit-symbol { grid-row: span 4; }
+      .unit-type { margin-top: 0; }
+      .unit-tag { justify-self: start; }
+      .world-panel { padding: 62px 8%; }
+      .world-panel::after { right: -35px; font-size: 160px; }
+      .roadmap-list { grid-template-columns: 1fr; }
+      .roadmap-item, .roadmap-item:last-child { border-right: 0; border-bottom: 1px solid var(--line); margin: 0; padding: 20px 0; }
+      .roadmap-item:last-child { border-bottom: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav wrap" aria-label="メインナビゲーション">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">✳</span> GAME CONCEPT</a>
+      <div class="nav-links">
+        <a href="#concept">ゲーム概要</a>
+        <a href="#play">ゲームの流れ</a>
+        <a href="#arsenal">防衛ユニット</a>
+        <a class="nav-cta" href="#roadmap">開発プラン</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-art" aria-hidden="true">
+        <div class="moon"></div><div class="tree tree-a"></div><div class="tree tree-b"></div>
+      </div>
+      <div class="wrap">
+        <div class="hero-copy">
+          <div class="eyebrow">A nature-powered tower defense</div>
+          <h1>LAST<span>GROVE</span></h1>
+          <p class="hero-lead">小さな苗木から、森の未来を守り抜け。<br>自然の力を組み合わせて侵攻する敵を迎え撃つ、戦略型タワーディフェンス。</p>
+          <a class="button" href="#concept">企画を見る <span aria-hidden="true">↓</span></a>
+          <p class="hero-note"><b>GAME CONCEPT</b>　|　PC / Unity　|　1人プレイ</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="concept" id="concept">
+      <div class="wrap">
+        <div class="concept-grid">
+          <div class="concept-visual" role="img" aria-label="光に包まれた森の苗木をイメージしたビジュアル">
+            <span class="seed" aria-hidden="true">✳</span>
+            <span class="visual-caption">THE LAST SEED — 森の最後の希望</span>
+          </div>
+          <div class="concept-copy">
+            <div class="section-label">01 / GAME OVERVIEW</div>
+            <h2>森を育てることが、<br>最強の防衛になる。</h2>
+            <h3>枯れゆく世界に、もう一度緑を。</h3>
+            <p>機械の侵略によって荒廃した大地。プレイヤーは森の守り手となり、最後に残された「世界樹の苗木」を守ります。</p>
+            <p>防衛施設は、ただ敵を倒すだけではありません。敵の進路に森を広げ、地形と自然の力を味方につけることで、戦況そのものを変えていきます。</p>
+            <div class="concept-stats">
+              <div class="stat"><strong>TD</strong><span>ジャンル</span></div>
+              <div class="stat"><strong>1人</strong><span>プレイ人数</span></div>
+              <div class="stat"><strong>Unity</strong><span>開発環境</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="loop" id="play">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="section-label">02 / CORE GAMEPLAY</div><h2>考えて、育てて、守り抜く。</h2></div>
+          <p class="section-intro">敵の進行ルートを読み、限られたエネルギーをどこに使うか。準備と判断が勝利の鍵です。</p>
+        </div>
+        <div class="loop-grid">
+          <article class="loop-card"><span class="loop-num">STEP 01</span><span class="loop-icon" aria-hidden="true">⌖</span><h3>戦場を読む</h3><p>地形と敵の進路を確認。守る場所と迎撃地点を決める。</p></article>
+          <article class="loop-card"><span class="loop-num">STEP 02</span><span class="loop-icon" aria-hidden="true">✳</span><h3>森を配置する</h3><p>エネルギーを使い、攻撃・妨害・支援の樹を植える。</p></article>
+          <article class="loop-card"><span class="loop-num">STEP 03</span><span class="loop-icon" aria-hidden="true">➤</span><h3>ウェーブを迎撃</h3><p>敵の特性に合わせて、配置と能力を組み合わせる。</p></article>
+          <article class="loop-card"><span class="loop-num">STEP 04</span><span class="loop-icon" aria-hidden="true">⌁</span><h3>森を再生する</h3><p>報酬で森を強化。次の波に備えて戦略を更新する。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="arsenal" id="arsenal">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="section-label">03 / DEFENSE UNITS</div><h2>自然の力を、戦術に変える。</h2></div>
+          <p class="section-intro">それぞれの樹には得意分野があります。単独の強さより、組み合わせを見つけよう。</p>
+        </div>
+        <div class="unit-grid">
+          <article class="unit-card">
+            <div class="unit-symbol" aria-hidden="true">✦</div>
+            <div class="unit-type">ATTACK / LONG RANGE</div><h3>ひかりの樹</h3>
+            <p>光の弾で遠くの敵を狙う基本ユニット。迷ったときに頼れる安定した攻撃力。</p>
+            <span class="unit-tag">遠距離攻撃</span>
+          </article>
+          <article class="unit-card">
+            <div class="unit-symbol" aria-hidden="true">≈</div>
+            <div class="unit-type">CONTROL / SLOW</div><h3>みずの樹</h3>
+            <p>水流で敵の移動速度を低下。攻撃ユニットの射程に敵を長くとどめる。</p>
+            <span class="unit-tag">移動妨害</span>
+          </article>
+          <article class="unit-card">
+            <div class="unit-symbol" aria-hidden="true">⌁</div>
+            <div class="unit-type">SUPPORT / AREA</div><h3>ねむりの樹</h3>
+            <p>香りの範囲に入った敵を一時的に足止め。危険な敵の波を立て直す。</p>
+            <span class="unit-tag">範囲サポート</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="world">
+      <div class="world-panel">
+        <div class="world-content">
+          <div class="section-label">04 / THE WORLD</div>
+          <h2>守るたびに、<br>世界が色づいていく。</h2>
+          <p>戦いの舞台は、灰色の荒野から始まります。ウェーブを乗り越えるごとに苗木は成長し、草花や動物たちが少しずつ帰ってくる。勝利の手応えを、変化する景色でも感じられます。</p>
+          <blockquote class="world-quote">「森を守ることは、明日を植えること。」</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="roadmap" id="roadmap">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="section-label">05 / DEVELOPMENT PLAN</div><h2>まずは、遊べる一本を。</h2></div>
+          <p class="section-intro">小さく完成させてから面白さを確かめ、段階的に遊びの幅を広げます。</p>
+        </div>
+        <div class="roadmap-list">
+          <article class="roadmap-item"><div class="phase">PHASE 01 / PROTOTYPE</div><h3>防衛の基本を作る</h3><p>敵の移動、ユニット配置、攻撃、勝敗判定を実装。1ステージを最後まで遊べる状態にする。</p></article>
+          <article class="roadmap-item"><div class="phase">PHASE 02 / GAMEPLAY</div><h3>戦略の選択肢を増やす</h3><p>ユニットと敵の種類、強化、ウェーブ構成を追加。組み合わせの面白さを調整する。</p></article>
+          <article class="roadmap-item"><div class="phase">PHASE 03 / POLISH</div><h3>森の世界を仕上げる</h3><p>UI、演出、サウンド、ステージを整え、初めて遊ぶ人にも伝わる体験にする。</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row"><span>LAST GROVE — GAME CONCEPT</span><span>企画紹介ページ</span></div>
+  </footer>
+</body>
+</html>
